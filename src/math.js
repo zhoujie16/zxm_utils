@@ -1,7 +1,8 @@
 /**
  * 加法运算，避免数据相加小数点后产生多位数和计算精度损失。
- *
- * @param num1加数1 | num2加数2
+ * @example
+ * let res = numAdd(1, 2);
+ * console.log(res);
  */
 export const numAdd = (num1, num2) => {
   var baseNum, baseNum1, baseNum2;
@@ -21,8 +22,9 @@ export const numAdd = (num1, num2) => {
 
 /**
  * 加法运算，避免数据相减小数点后产生多位数和计算精度损失。
- *
- * @param num1被减数 | num2减数
+ * @example
+ * let res = numSub(1, 2);
+ * console.log(res);
  */
 export const numSub = (num1, num2) => {
   var baseNum, baseNum1, baseNum2;
@@ -44,8 +46,9 @@ export const numSub = (num1, num2) => {
 
 /**
  * 乘法运算，避免数据相乘小数点后产生多位数和计算精度损失。
- *
- * @param num1被乘数 | num2乘数
+ * @example
+ * let res = numMulti(1, 2);
+ * console.log(res);
  */
 export const numMulti = (num1, num2) => {
   var baseNum = 0;
@@ -68,8 +71,9 @@ export const numMulti = (num1, num2) => {
 
 /**
  * 除法运算，避免数据相除小数点后产生多位数和计算精度损失。
- *
- * @param num1被除数 | num2除数
+ * @example
+ * let res = numDiv(1, 2);
+ * console.log(res);
  */
 export const numDiv = (num1, num2) => {
   var baseNum1 = 0,

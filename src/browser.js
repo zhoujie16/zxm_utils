@@ -1,4 +1,9 @@
-// 是否微信小程序环境
+/**
+ * 判断是否微信小程序环境
+ * @example
+ * let res = isWeiXinMiniProgram();
+ * console.log(res); // true / false
+ */
 export const isWeiXinMiniProgram = () => {
   let flag = false;
   try {
@@ -9,7 +14,12 @@ export const isWeiXinMiniProgram = () => {
   return flag;
 };
 
-// 是否支付宝小程序环境
+/**
+ * 判断是否支付宝小程序环境
+ * @example
+ * let res = isAliPayMiniProgram();
+ * console.log(res); // true / false
+ */
 export const isAliPayMiniProgram = () => {
   let flag = false;
   try {
@@ -20,7 +30,12 @@ export const isAliPayMiniProgram = () => {
   return flag;
 };
 
-// 是否浏览器环境
+/**
+ * 判断是否浏览器环境
+ * @example
+ * let res = isBrowser();
+ * console.log(res); // true / false
+ */
 export const isBrowser = () => {
   let flag = false;
   if (
@@ -32,7 +47,12 @@ export const isBrowser = () => {
   return flag;
 };
 
-// 是否 Node 环境
+/**
+ * 判断是否 Node 环境
+ * @example
+ * let res = isNode();
+ * console.log(res); // true / false
+ */
 export const isNode = () => {
   let flag = false;
   if (
@@ -44,7 +64,12 @@ export const isNode = () => {
   return flag;
 };
 
-// 是否微信浏览器环境
+/**
+ * 判断是否微信浏览器环境
+ * @example
+ * let res = isWeiXinBrowser();
+ * console.log(res); // true / false
+ */
 export const isWeiXinBrowser = () => {
   let flag = false;
   if (isBrowser()) {
@@ -56,7 +81,12 @@ export const isWeiXinBrowser = () => {
   return flag;
 };
 
-// 是否移动端浏览器
+/**
+ * 判断是否移动端浏览器
+ * @example
+ * let res = isMobileBrowser();
+ * console.log(res); // true / false
+ */
 export const isMobileBrowser = () => {
   let flag = false;
   if (isBrowser()) {
@@ -68,7 +98,12 @@ export const isMobileBrowser = () => {
   return flag;
 };
 
-// 是否PC端浏览器
+/**
+ * 判断是否PC端浏览器
+ * @example
+ * let res = isPCBrowser();
+ * console.log(res); // true / false
+ */
 export const isPCBrowser = () => {
   let flag = false;
   if (isBrowser()) {

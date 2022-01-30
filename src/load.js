@@ -3,6 +3,10 @@
  * @param {Array | String} url script/link的url队列
  * @param {Element} appendee 插入的父元素 默认body
  * @param {Function} callback 所有script onload回调 也可通过返回的promise执行回调
+ * @example
+ * loadScript(["xxx.css","xxx.js"]).then(()=>{
+ *    console.log("loadScript Success")
+ * })
  */
 export const loadScript = (urls, appendee, callback) => {
   urls = Array.isArray(urls) ? urls : [urls];

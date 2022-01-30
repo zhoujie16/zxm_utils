@@ -1,6 +1,11 @@
 'use strict';
 
-// 是否微信小程序环境
+/**
+ * 判断是否微信小程序环境
+ * @example
+ * let res = isWeiXinMiniProgram();
+ * console.log(res); // true / false
+ */
 const isWeiXinMiniProgram = () => {
   let flag = false;
   try {
@@ -11,7 +16,12 @@ const isWeiXinMiniProgram = () => {
   return flag;
 };
 
-// 是否支付宝小程序环境
+/**
+ * 判断是否支付宝小程序环境
+ * @example
+ * let res = isAliPayMiniProgram();
+ * console.log(res); // true / false
+ */
 const isAliPayMiniProgram = () => {
   let flag = false;
   try {
@@ -22,7 +32,12 @@ const isAliPayMiniProgram = () => {
   return flag;
 };
 
-// 是否浏览器环境
+/**
+ * 判断是否浏览器环境
+ * @example
+ * let res = isBrowser();
+ * console.log(res); // true / false
+ */
 const isBrowser = () => {
   let flag = false;
   if (
@@ -34,7 +49,12 @@ const isBrowser = () => {
   return flag;
 };
 
-// 是否 Node 环境
+/**
+ * 判断是否 Node 环境
+ * @example
+ * let res = isNode();
+ * console.log(res); // true / false
+ */
 const isNode = () => {
   let flag = false;
   if (
@@ -46,7 +66,12 @@ const isNode = () => {
   return flag;
 };
 
-// 是否微信浏览器环境
+/**
+ * 判断是否微信浏览器环境
+ * @example
+ * let res = isWeiXinBrowser();
+ * console.log(res); // true / false
+ */
 const isWeiXinBrowser = () => {
   let flag = false;
   if (isBrowser()) {
@@ -58,7 +83,12 @@ const isWeiXinBrowser = () => {
   return flag;
 };
 
-// 是否移动端浏览器
+/**
+ * 判断是否移动端浏览器
+ * @example
+ * let res = isMobileBrowser();
+ * console.log(res); // true / false
+ */
 const isMobileBrowser = () => {
   let flag = false;
   if (isBrowser()) {
@@ -70,7 +100,12 @@ const isMobileBrowser = () => {
   return flag;
 };
 
-// 是否PC端浏览器
+/**
+ * 判断是否PC端浏览器
+ * @example
+ * let res = isPCBrowser();
+ * console.log(res); // true / false
+ */
 const isPCBrowser = () => {
   let flag = false;
   if (isBrowser()) {
@@ -98,6 +133,10 @@ var browserUtils = /*#__PURE__*/Object.freeze({
  * @param {Array | String} url script/link的url队列
  * @param {Element} appendee 插入的父元素 默认body
  * @param {Function} callback 所有script onload回调 也可通过返回的promise执行回调
+ * @example
+ * loadScript(["xxx.css","xxx.js"]).then(()=>{
+ *    console.log("loadScript Success")
+ * })
  */
 const loadScript = (urls, appendee, callback) => {
   urls = Array.isArray(urls) ? urls : [urls];
@@ -142,8 +181,9 @@ var loadUtils = /*#__PURE__*/Object.freeze({
 
 /**
  * 加法运算，避免数据相加小数点后产生多位数和计算精度损失。
- *
- * @param num1加数1 | num2加数2
+ * @example
+ * let res = numAdd(1, 2);
+ * console.log(res);
  */
 const numAdd = (num1, num2) => {
   var baseNum, baseNum1, baseNum2;
@@ -163,8 +203,9 @@ const numAdd = (num1, num2) => {
 
 /**
  * 加法运算，避免数据相减小数点后产生多位数和计算精度损失。
- *
- * @param num1被减数 | num2减数
+ * @example
+ * let res = numSub(1, 2);
+ * console.log(res);
  */
 const numSub = (num1, num2) => {
   var baseNum, baseNum1, baseNum2;
@@ -186,8 +227,9 @@ const numSub = (num1, num2) => {
 
 /**
  * 乘法运算，避免数据相乘小数点后产生多位数和计算精度损失。
- *
- * @param num1被乘数 | num2乘数
+ * @example
+ * let res = numMulti(1, 2);
+ * console.log(res);
  */
 const numMulti = (num1, num2) => {
   var baseNum = 0;
@@ -210,8 +252,9 @@ const numMulti = (num1, num2) => {
 
 /**
  * 除法运算，避免数据相除小数点后产生多位数和计算精度损失。
- *
- * @param num1被除数 | num2除数
+ * @example
+ * let res = numDiv(1, 2);
+ * console.log(res);
  */
 const numDiv = (num1, num2) => {
   var baseNum1 = 0,
@@ -240,7 +283,12 @@ var mathUtils = /*#__PURE__*/Object.freeze({
   numDiv: numDiv
 });
 
-// 生成随机颜色值
+/**
+ * 随机生成成颜色值
+ * @example
+ * let res = getRandomColor();
+ * console.log(res); // #ffffff
+ */
 const getRandomColor = () => {
   const rgb = [];
   for (let i = 0; i < 3; ++i) {
@@ -256,60 +304,18 @@ var randomUtils = /*#__PURE__*/Object.freeze({
   getRandomColor: getRandomColor
 });
 
-// 延迟函数
+/**
+ * 延迟函数
+ * @example
+ * await sleep(1000);
+ */
 const sleep = (time) => {
   return new Promise((r) => setTimeout(r, time));
 };
 
-//函数防抖[func 函数,wait 延迟执行毫秒数,immediate true 表立即执行,false 表非立即执行,立即执行是触发事件后函数会立即执行，然后n秒内不触发事件才能继续执行函数的效果]
-const debounceFn = function (func, wait, immediate) {
-  let timeout;
-  return function () {
-    let context = this;
-    let args = arguments;
-    if (timeout) clearTimeout(timeout);
-    if (immediate) {
-      var callNow = !timeout;
-      timeout = setTimeout(() => {
-        timeout = null;
-      }, wait);
-      if (callNow) func.apply(context, args);
-    } else {
-      timeout = setTimeout(function () {
-        func.apply(context, args);
-      }, wait);
-    }
-  };
-};
-
-//函数节流 [func 函数 wait 延迟执行毫秒数 type 1 表时间戳版，2 表定时器版]
-
-const throttleFn = function (func, wait, type) {
-  return function () {
-    let context = this;
-    let args = arguments;
-    if (type === 1) {
-      let now = Date.now();
-      if (now - previous > wait) {
-        func.apply(context, args);
-        previous = now;
-      }
-    } else if (type === 2) {
-      if (!timeout) {
-        timeout = setTimeout(() => {
-          timeout = null;
-          func.apply(context, args);
-        }, wait);
-      }
-    }
-  };
-};
-
 var otherUtils = /*#__PURE__*/Object.freeze({
   __proto__: null,
-  sleep: sleep,
-  debounceFn: debounceFn,
-  throttleFn: throttleFn
+  sleep: sleep
 });
 
 var cryptoUtils = /*#__PURE__*/Object.freeze({

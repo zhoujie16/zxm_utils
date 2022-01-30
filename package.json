@@ -5,9 +5,11 @@
   "license": "MIT",
   "scripts": {
     "dev": "rollup -c",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "doc": "node autoDoc.js"
   },
   "devDependencies": {
+    "documentation": "^13.2.5",
     "rollup": "^2.66.1"
   },
   "dependencies": {}

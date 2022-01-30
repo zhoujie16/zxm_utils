@@ -1,4 +1,9 @@
-// 生成随机颜色值
+/**
+ * 随机生成成颜色值
+ * @example
+ * let res = getRandomColor();
+ * console.log(res); // #ffffff
+ */
 export const getRandomColor = () => {
   const rgb = [];
   for (let i = 0; i < 3; ++i) {
@@ -8,4 +13,3 @@ export const getRandomColor = () => {
   }
   return "#" + rgb.join("");
 };
- 
