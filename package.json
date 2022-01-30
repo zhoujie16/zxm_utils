@@ -1,0 +1,14 @@
+{
+  "name": "zxm-utils",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "rollup -c",
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "rollup": "^2.66.1"
+  },
+  "dependencies": {}
+}
