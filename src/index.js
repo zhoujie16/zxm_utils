@@ -5,7 +5,7 @@ import * as randomUtils from "./random";
 import * as otherUtils from "./other";
 import * as cryptoUtils from "./crypto";
 
-const zxmUtils = {
+const ZxmUtils = {
   ...browserUtils,
   ...loadUtils,
   ...mathUtils,
@@ -14,4 +14,4 @@ const zxmUtils = {
   ...cryptoUtils,
 };
 
-export default zxmUtils;
+export default ZxmUtils;
