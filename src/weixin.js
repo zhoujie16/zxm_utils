@@ -15,7 +15,7 @@ class WxJSHandler {
       "updateTimelineShareData",
       "miniProgram",
     ];
-    this.serveApiUrl = "";
+    this.serveApiUrl = "http://d.abczzz.cn/wx_pub_account/getWxJsSdkConfig";
     this.isLoadSdk = false;
     this.wx = {};
   }
@@ -27,6 +27,10 @@ class WxJSHandler {
 
   setJsApiList(list) {
     this.jsApiList = list;
+  }
+
+  setServeApiUrl(url) {
+    this.serveApiUrl = url;
   }
 
   loadScript = (urls, appendee, callback) => {
